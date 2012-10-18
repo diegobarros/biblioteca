@@ -5,7 +5,6 @@ class HomeController < ApplicationController
   def verificar_codigo
     
     if verify_recaptcha :private_key => '6LdG6NcSAAAAAPDJYFCj4DPmyThV2x7gqwGFRtz0'
-      
         session[:acertos] = params[:acertos].to_i.next
         redirect_to :controller => 'home', :action => 'index', :acertos => params[:acertos]
         
